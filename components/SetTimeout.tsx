@@ -64,7 +64,9 @@ function SetTimeoutComponent() {
           </div>
         </div>
         <div className="p-4 bg-gray-100 rounded-lg mt-4">Result: {result}</div>
-        <code>
+        <code
+        className="w-[350px] md:w-[700px] mt-4"
+        >
           <CodeHighLighter code={code} />
         </code>
       </div>

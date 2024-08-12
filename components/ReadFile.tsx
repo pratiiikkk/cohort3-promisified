@@ -44,36 +44,28 @@ function ReadFile() {
   };
 
   return (
-    <div
-    className="mt-4"
-    >
-         <Button variant={"outline"}
-         className="my-3"
-         >Read File</Button>
-      <div className="flex space-x-4 items-center">
-        <form
-        className="flex space-x-4 items-center"
-        >
-          <Input type="file" ref={ref}/>
-
+    <div className="mt-4">
+      <Button variant={"outline"} className="my-3 w-full md:w-auto">
+        Read File
+      </Button>
+      <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 items-center">
+        <form className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 items-center w-full">
+          <Input type="file" ref={ref} className="w-full md:w-auto" />
           <Button
             onClick={handleReadFile}
             variant={"outline"}
-            className="bg-zinc-700 text-white"
+            className="bg-zinc-700 text-white w-full md:w-auto"
           >
             Read File
           </Button>
         </form>
       </div>
-      <div
-      className="p-4 bg-gray-100 rounded-lg mt-4"
-      >
-
-        {
-            result && <p className="mt-4"> {result} </p>
-        }
+      <div className="p-4 bg-gray-100 rounded-lg mt-4 w-full">
+        {result && <p className="mt-4">{result}</p>}
       </div>
-      <CodeHighLighter code={code} />
+      <div className="w-[400px] md:w-auto  mt-4">
+        <CodeHighLighter code={code} />
+      </div>
     </div>
   );
 }

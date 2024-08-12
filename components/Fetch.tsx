@@ -53,41 +53,39 @@ function Fetch() {
         setLoading(false);
     }
   return (
-    <div
-    className='mt-4'
-    >
-         <Button variant={"outline"}
-         className="my-3"
-         >fetch</Button>
-            <form>
+      <div className="mt-4">
+      <Button variant={"outline"} className="my-3">
+        fetch
+      </Button>
+      <form
+      className='w-full'
+      >
+        <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 items-center ">
+          <Input
+            type="text"
+            placeholder="Enter URL"
+            ref={ref}
+            onChange={(e) => setUrl(e.target.value)}
+            defaultValue={"https://jsonplaceholder.typicode.com/posts/1"}
+            className="w-full "
+          />
+          <Button
+            disabled={loading}
+            variant={"outline"}
+            onClick={handleSubmit}
+            className="bg-zinc-700 text-white w-full md:w-auto"
+          >
+            {loading ? "Loading" : "Fetch"}
+          </Button>
+        </div>
+      </form>
+      <div className="w-[350px] md:w-[700px] mt-4">
+        <CodeHighLighter code={result} />
+      </div>
+      <div className="w-[350px] md:w-[700px] mt-4 flex justify-center items-center">
 
-                <div
-                className='flex space-x-4 items-center'
-                >
-                    <Input type="text" placeholder="Enter URL"
-                    ref={ref}
-                    onChange={(e) => setUrl(e.target.value)}
-                    defaultValue={'https://jsonplaceholder.typicode.com/posts/1'}
-                 />
-                    <Button
-                    disabled={loading}
-                    variant={"outline"}
-                    onClick={handleSubmit}
-                    className="bg-zinc-700 text-white"
-                    >
-                        {
-                            loading ? 'Loading' : 'Fetch'
-                        }
-                    </Button>
-                </div>
-            </form>
-            <div
-            className='w-[700px]'
-            >
-            <CodeHighLighter code={result}/>
-
-            </div>
-            <CodeHighLighter code={code}/> 
+      <CodeHighLighter code={code} />
+      </div>
     </div>
   )
 }
