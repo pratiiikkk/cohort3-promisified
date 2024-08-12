@@ -25,12 +25,13 @@ PromisifiedReaFile("data.txt", "utf8").then((data) => {
 
 `;
 function ReadFile() {
-    const [result, setResult] = useState<string>("");
+  const [result, setResult] = useState<string>("");
   const ref = useRef<HTMLInputElement>(null);
-  const handleReadFile = async (e:any) => {
+  const handleReadFile = async (e: any) => {
     e.preventDefault();
     const file = ref.current?.files?.[0];
     if (!file) {
+      setResult("No file selected");
       return;
     }
     const reader = new FileReader();
@@ -39,8 +40,6 @@ function ReadFile() {
       setResult(text as string);
     };
     reader.readAsText(file);
-
-    
   };
 
   return (
