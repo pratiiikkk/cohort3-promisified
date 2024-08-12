@@ -30,6 +30,7 @@ function ReadFile() {
   const handleReadFile = async (e: any) => {
     e.preventDefault();
     const file = ref.current?.files?.[0];
+
     if (!file) {
       setResult("No file selected");
       return;
@@ -49,7 +50,13 @@ function ReadFile() {
       </Button>
       <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 items-center">
         <form className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 items-center w-full">
-          <Input type="file" ref={ref} className="w-full md:w-auto" />
+          {/* accept only txt */}
+          <Input
+            type="file"
+            accept=".txt"
+            ref={ref}
+            className="w-full md:w-auto"
+          />
           <Button
             onClick={handleReadFile}
             variant={"outline"}
