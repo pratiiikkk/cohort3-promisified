@@ -41,9 +41,11 @@ function SetTimeoutComponent() {
 
   return (
      <div>
-      <div>
+      <div
+      className=" md:w-auto"
+      >
         <Button variant={"outline"}>setTimeout</Button>
-        <div className="w-full md:w-[700px] rounded-lg mt-4 flex flex-col md:flex-row justify-between">
+        <div className=" md:w-[700px] rounded-lg mt-4 flex flex-col md:flex-row justify-between">
           <div className="items-center space-x-4 w-full">
             <div className="flex">
               <Input
@@ -63,7 +65,7 @@ function SetTimeoutComponent() {
           </div>
         </div>
         <div className="p-4 bg-gray-100 rounded-lg mt-4">Result: {result}</div>
-        <code className="w-full md:w-[700px] mt-4">
+        <code className="w-[350px] md:w-[700px] mt-4">
           <CodeHighLighter code={code} />
         </code>
       </div>

@@ -62,7 +62,7 @@ function ReadFile() {
       <div className="p-4 bg-gray-100 rounded-lg mt-4 w-full">
         {result && <p className="mt-4">{result}</p>}
       </div>
-      <div className="w-[400px] md:w-auto  mt-4">
+      <div className="w-[350px] md:w-auto  mt-4">
         <CodeHighLighter code={code} />
       </div>
     </div>
