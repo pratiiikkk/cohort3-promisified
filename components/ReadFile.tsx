@@ -8,7 +8,7 @@ import * as fs from "fs";
 
 function PromisifiedReaFile(file: string, encoding: string): Promise<string> {
   return new Promise((resolve, reject) => {
-    fs.readFile("data.txt", "utf8", (err, data) => {
+    fs.readFile(file,encoding, (err, data) => {
       if (err) {
         reject(err);
       }
