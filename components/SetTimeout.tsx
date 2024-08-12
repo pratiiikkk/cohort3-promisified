@@ -42,7 +42,7 @@ function SetTimeoutComponent() {
   return (
      <div>
       <div
-      className=" md:w-auto"
+      className="w-[350px] md:w-auto"
       >
         <Button variant={"outline"}>setTimeout</Button>
         <div className=" md:w-[700px] rounded-lg mt-4 flex flex-col md:flex-row justify-between">
